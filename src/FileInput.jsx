@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import Papa from 'papaparse';
 
-function FileInput({DataLoaded}){
+function FileInput({dataLoaded}){
     const [csvFile, setCSVFIle] = useState(null);
 
 
@@ -10,10 +10,11 @@ function FileInput({DataLoaded}){
     }
 
     const parseCSV = () => {
+        console.log("Hello")
         if(csvFile){
             Papa.parse(csvFile, {
                 complete: (result) => {
-                    data(result.data);
+                    dataLoaded(result.data);
                 },
                 header: true,
             });
@@ -25,7 +26,7 @@ function FileInput({DataLoaded}){
     return(
         <div>
             <input type="file" accept=".csv" onChange={handleFileChange}></input>
-            <button onClick={() => parseCSV}>Analyze Scores</button>
+            <button onClick={parseCSV}>Analyze Scores</button>
         </div>
     );
 }
