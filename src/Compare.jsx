@@ -5,6 +5,7 @@ import Select from "react-select";
 function Compare({data}){
     const headers = Object.keys(data[0]);
     const [show, setShow] = useState(false);
+    const [buttonText, setButtonText] = useState("Compare Scores")
     const [persons, setPersons] = useState([null, null]);
     const personNames = data.map((person) => ({
         label: person.Name,
@@ -21,10 +22,14 @@ function Compare({data}){
 
 
     return(
-        <div>
-            <Select className="basic-single" classNamePrefix="select" defaultValue={persons[0]} isSearchable={true} name="personOne" options={personNames} onChange={(person) => handleSelectPerson(person, 0)}/>
+        <div className="compare-container">
+            <Select className="basic-single" classNamePrefix="select" defaulstValue={persons[0]} isSearchable={true} name="personOne" options={personNames} onChange={(person) => handleSelectPerson(person, 0)}/>
             <Select className="basic-single" classNamePrefix="select" defaultValue={persons[1]} isSearchable={true} name="personOne" options={personNames} onChange={(person) => handleSelectPerson(person, 1)}/>
-            <button onClick={() => setShow(!show)}>Compare Scores</button>
+            <button onClick={() => {
+                if(!persons.includes(null)){
+                    {show ? setButtonText("CompareScores") : setButtonText("Hide Comparison");
+                        setShow(!show);
+                }} }}>{buttonText}</button>           
             {show && 
                 <table>
                     <thead>

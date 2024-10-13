@@ -35,7 +35,7 @@ function Rankings({data}){
     
 
     return(
-        <div>
+        <div className="rankings-container">
             <h2>Rankings</h2>
             <table>
                 <thead>

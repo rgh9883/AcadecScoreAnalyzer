@@ -34,7 +34,7 @@ function Medals({data}){
 
 
     return(
-        <div>
+        <div className="medals-container">
             <h2>Medals</h2>
             {events.map((eventName, index) => {
                 const medalists = getMedalists(data, eventName);

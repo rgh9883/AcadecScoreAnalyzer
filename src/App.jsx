@@ -16,7 +16,6 @@ function App() {
 
   return (
     <>
-      <div>
         <FileInput dataLoaded={handleCSVData}/>
         {csvData && 
           <button onClick={() => {
@@ -27,7 +26,6 @@ function App() {
         {showAllScores && <Rankings data={csvData} />}
         {csvData && <Compare data={csvData} />}
         {csvData && <Medals data={csvData} />}
-      </div>
     </>
   )
 }

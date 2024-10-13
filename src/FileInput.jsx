@@ -23,7 +23,7 @@ function FileInput({dataLoaded}){
 
 
     return(
-        <div>
+        <div className="fileInput-container">
             <input type="file" accept=".csv" onChange={handleFileChange}></input>
             <button onClick={parseCSV}>Analyze Scores</button>
         </div>
