@@ -23,7 +23,8 @@ function Compare({data}){
 
     return(
         <div className="compare-container">
-            <Select className="basic-single" classNamePrefix="select" defaulstValue={persons[0]} isSearchable={true} name="personOne" options={personNames} onChange={(person) => handleSelectPerson(person, 0)}/>
+            <Select className="basic-single" classNamePrefix="select" defaulstValue={persons[0]} isSearchable={true} name="personOne" options={personNames} onChange={(person) => handleSelectPerson(person, 0)}/><br/><br/>
+            <h3>VS</h3><br/><br/>
             <Select className="basic-single" classNamePrefix="select" defaultValue={persons[1]} isSearchable={true} name="personOne" options={personNames} onChange={(person) => handleSelectPerson(person, 1)}/>
             <button onClick={() => {
                 if(!persons.includes(null)){

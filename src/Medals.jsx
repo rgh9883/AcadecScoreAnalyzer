@@ -35,7 +35,7 @@ function Medals({data}){
 
     return(
         <div className="medals-container">
-            <h2>Medals</h2>
+            <h2><b>Medals</b></h2>
             {events.map((eventName, index) => {
                 const medalists = getMedalists(data, eventName);
                 return (
@@ -72,7 +72,7 @@ function Medals({data}){
                                     </tr>
                                 ))}
                             </tbody>
-                        </table>
+                        </table><br/>
                     </div>
                 );
             })}
