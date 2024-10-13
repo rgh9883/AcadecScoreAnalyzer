@@ -6,7 +6,9 @@ table, th, td{
 }
 
 button{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     cursor: pointer;
+    padding: 5px;
     border-radius: 5px;
     border: 0;
 }
@@ -16,9 +18,26 @@ button:hover{
     color: black;
 }
 
+input[type="file"]::file-selector-button {
+    display: none;
+  }
 
 input[type="file"]{
-    color: rgb(255, 54, 54);
+    font-size: 14px;
+    color: hsl(0, 0%, 0%);
+}
+
+label {
+    background-color: hsl(0, 5%, 90%);
+    border: 0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: small;
+}
+
+label:hover{
+    background-color: hsl(202, 83%, 80%);
 }
 
 .sorting-header:hover{
@@ -27,4 +46,8 @@ input[type="file"]{
 }
 .sorting-header{
     color: black;
+}
+
+body{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
