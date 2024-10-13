@@ -41,7 +41,7 @@ function Medals({data}){
                 return (
                     <div key={index}>
                         <h3>{eventName}:</h3>
-                        <table>
+                        <table className="inner-table">
                             <thead>
                                 <tr>
                                     <th>Medal</th>

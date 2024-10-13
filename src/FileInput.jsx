@@ -17,7 +17,6 @@ function FileInput({dataLoaded}){
                 },
                 header: true,
             });
-            console.log("Finished Parsing")
         }
     };
 
@@ -25,7 +24,7 @@ function FileInput({dataLoaded}){
     return(
         <div className="fileInput-container">
             <label htmlFor="upload">Choose File</label>
-            <input id="upload" type="file" accept=".csv" onChange={handleFileChange}></input>
+            <input id="upload" type="file" accept=".csv" onChange={handleFileChange}></input><br />
             <button onClick={parseCSV}>Analyze Scores</button>
         </div>
     );

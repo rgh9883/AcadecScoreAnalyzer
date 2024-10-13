@@ -21,7 +21,7 @@ function App() {
 
   return (
     <>  
-
+        <h1>Academic Decathlon Score Analyzer</h1>
         {!viewingOther && <FileInput dataLoaded={handleCSVData}/>}
         {csvData && (!viewingOther || showAllScores) &&
           <button onClick={() => {

@@ -27,7 +27,7 @@ function Compare({data}){
             <Select className="basic-single" classNamePrefix="select" defaultValue={persons[1]} isSearchable={true} name="personOne" options={personNames} onChange={(person) => handleSelectPerson(person, 1)}/>
             <button onClick={() => {
                 if(!persons.includes(null)){
-                    {show ? setButtonText("CompareScores") : setButtonText("Hide Comparison");
+                    {show ? setButtonText("Compare Scores") : setButtonText("Hide Comparison");
                         setShow(!show);
                 }} }}>{buttonText}</button>           
             {show && 
