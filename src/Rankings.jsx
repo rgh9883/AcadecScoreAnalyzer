@@ -29,7 +29,6 @@ function Rankings({data}){
                 
                 default:
                     return Number(b[sortedBy]) - Number(a[sortedBy]);
-
             }
         }));
     }, [sortedBy]);
@@ -42,7 +41,7 @@ function Rankings({data}){
                 <thead>
                 <tr>
                     {headers.map((header, index) => (
-                    <th key={index} onClick={() => handleSortData(header)}>{header}</th>
+                    <th key={index} onClick={() => handleSortData(header)} className="sorting-header">{header}</th>
                     ))}
                 </tr>
                 </thead>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import FileInput from './FileInput.jsx'
 import Rankings from './Rankings.jsx';
 import Compare from './Compare.jsx';
+import Medals from './Medals.jsx';
 
 function App() {
   const [csvData, setCSVData] = useState(null);
@@ -10,7 +11,7 @@ function App() {
 
   const handleCSVData = (data) => {
     setCSVData(data);
-    console.log("Parsed Data:", data);
+
   };
 
   return (
@@ -23,8 +24,9 @@ function App() {
             showAllScores ? setShowText("Show Rankings") : setShowText("Hide Rankings");
           }}>{showText}</button>
         }
-        {showAllScores && <Rankings data={csvData}/>}
-        {csvData && <Compare data={csvData}/>}
+        {showAllScores && <Rankings data={csvData} />}
+        {csvData && <Compare data={csvData} />}
+        {csvData && <Medals data={csvData} />}
       </div>
     </>
   )

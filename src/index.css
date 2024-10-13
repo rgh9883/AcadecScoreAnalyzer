@@ -18,10 +18,13 @@ button:hover{
 
 
 input[type="file"]{
-    color: rgb(0, 0, 0);
+    color: rgb(255, 54, 54);
 }
 
-th:hover{
+.sorting-header:hover{
     cursor: pointer;
     color: hsl(203, 85%, 58%);
+}
+.sorting-header{
+    color: aquamarine;
 }
