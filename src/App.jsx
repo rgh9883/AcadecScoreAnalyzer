@@ -1,13 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, { useState } from 'react'
+import FileInput from './assets/FileInput.jsx'
 
 function App() {
+  const [csvData, setCSVData] = useState(null);
+
+  function handleCSVData(data){
+    setCSVData(data);
+    console.log(data);  
+  }
 
   return (
     <>
-      <input id='fileInput' type='file' accept='.csv'></input>
-      
+      <FileInput data={handleCSVData}/>
+
     </>
   )
 }
