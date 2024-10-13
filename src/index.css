@@ -23,5 +23,5 @@ input[type="file"]{
 
 th:hover{
     cursor: pointer;
-    color: aquamarine;
+    color: hsl(203, 85%, 58%);
 }

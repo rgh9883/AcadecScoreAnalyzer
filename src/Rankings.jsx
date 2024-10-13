@@ -37,25 +37,25 @@ function Rankings({data}){
 
     return(
         <div>
-        <h2>Rankings</h2>
-        <table>
-            <thead>
-            <tr>
-                {headers.map((header, index) => (
-                <th key={index} onClick={() => handleSortData(header)}>{header}</th>
-                ))}
-            </tr>
-            </thead>
-            <tbody>
-            {sortedData.map((person, index) => (
-                <tr key={index}>
-                {headers.map((header, index) => (
-                    <td key={index}>{person[header]}</td>
-                ))}
+            <h2>Rankings</h2>
+            <table>
+                <thead>
+                <tr>
+                    {headers.map((header, index) => (
+                    <th key={index} onClick={() => handleSortData(header)}>{header}</th>
+                    ))}
                 </tr>
-            ))}
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                {sortedData.map((person, index) => (
+                    <tr key={index}>
+                    {headers.map((header, index) => (
+                        <td key={index}>{person[header]}</td>
+                    ))}
+                    </tr>
+                ))}
+                </tbody>
+            </table>
         </div>
     )
 }

@@ -10,7 +10,6 @@ function FileInput({dataLoaded}){
     }
 
     const parseCSV = () => {
-        console.log("Hello")
         if(csvFile){
             Papa.parse(csvFile, {
                 complete: (result) => {
