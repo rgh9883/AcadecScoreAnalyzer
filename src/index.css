@@ -3,5 +3,25 @@ table, th, td{
     border-collapse: collapse;
     padding: 0.25rem;
     text-align: center;
-    
+}
+
+button{
+    cursor: pointer;
+    border-radius: 5px;
+    border: 0;
+}
+
+button:hover{
+    background-color: hsl(202, 83%, 80%);
+    color: black;
+}
+
+
+input[type="file"]{
+    color: rgb(0, 0, 0);
+}
+
+th:hover{
+    cursor: pointer;
+    color: aquamarine;
 }
