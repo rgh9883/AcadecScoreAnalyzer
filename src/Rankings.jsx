@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 
-
 function Rankings({data}){
     const headers = Object.keys(data[0]);
     const [sortedBy, setSortedBy] = useState("Team");
     const [sortedData, setSortedData] = useState(data);
+
     function handleSortData(header){
         setSortedBy(header);
     }
@@ -35,27 +35,27 @@ function Rankings({data}){
     
 
     return(
-        <div className="rankings-container">
-            <h2>Rankings</h2>
-            <table>
-                <thead>
-                <tr>
-                    {headers.map((header, index) => (
-                    <th key={index} onClick={() => handleSortData(header)} className="sorting-header">{header}</th>
-                    ))}
-                </tr>
-                </thead>
-                <tbody>
-                {sortedData.map((person, index) => (
-                    <tr key={index}>
-                    {headers.map((header, index) => (
-                        <td key={index}>{person[header]}</td>
-                    ))}
+            <div className="rankings-container">
+                <h2>Rankings</h2>
+                <table>
+                    <thead>
+                    <tr>
+                        {headers.map((header, index) => (
+                        <th key={index} onClick={() => handleSortData(header)} className="sorting-header">{header}</th>
+                        ))}
                     </tr>
-                ))}
-                </tbody>
-            </table>
-        </div>
+                    </thead>
+                    <tbody>
+                    {sortedData.map((person, index) => (
+                        <tr key={index}>
+                        {headers.map((header, index) => (
+                            <td key={index}>{person[header]}</td>
+                        ))}
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
+            </div>
     )
 }
 export default Rankings

@@ -7,38 +7,46 @@ import Medals from './Medals.jsx';
 function App() {
   const [csvData, setCSVData] = useState(null);
   const [showAllScores, setShowAllScores] = useState(false);
-  const [viewingOther, setViewingOther] = useState(true);
+  const [rankText, setRankText] = useState("Show Rankings")
+  const [viewingOther, setViewingOther] = useState(false);
   const [showCompare, setShowCompare] = useState(false);
   const [showMedals, setShowMedals] = useState(false);
+  const [compText, setCompText] = useState("Compare 2 Students");
+  const [medalText, setMedalText] = useState("View Medal Winners");
 
   const handleCSVData = (data) => {
     setCSVData(data);
   };
 
+
   return (
-    <>
-        <FileInput dataLoaded={handleCSVData}/>
-        {csvData && viewingOther &&
+    <>  
+
+        {!viewingOther && <FileInput dataLoaded={handleCSVData}/>}
+        {csvData && (!viewingOther || showAllScores) &&
           <button onClick={() => {
             setShowAllScores(!showAllScores);
             setViewingOther(!viewingOther);
-          }}>View Rankings</button>
+            showAllScores ? setRankText("Show Rankings") : setRankText("Close Rankings");
+          }}>{rankText}</button>
         }
-        {showAllScores && !viewingOther && <Rankings data={csvData} />}
-        {csvData && viewingOther &&
+        {showAllScores && viewingOther && <Rankings data={csvData} />}
+        {csvData && (!viewingOther || showCompare) &&
           <button onClick={() => {
             setShowCompare(!showCompare);
             setViewingOther(!viewingOther);
-          }}>Compare 2 Students</button>
+            showCompare ? setCompText("Compare 2 Students") : setCompText("Exit Compare");
+          }}>{compText}</button>
         }
-        {showCompare && !viewingOther && <Compare data={csvData} />}
-        {csvData && viewingOther &&
+        {showCompare && viewingOther && <Compare data={csvData} />}
+        {csvData && (!viewingOther || showMedals) &&
           <button onClick={() => {
             setShowMedals(!showMedals);
             setViewingOther(!viewingOther);
-          }}>View Medal Winners</button>
+            showMedals ? setMedalText("View Medal Winners") : setMedalText("Close Medal Winners");
+          }}>{medalText}</button>
         }
-        {showMedals && !viewingOther && <Medals data={csvData} />}
+        {showMedals && viewingOther && <Medals data={csvData} />}
     </>
   )
 }
